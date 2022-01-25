@@ -13,7 +13,8 @@
         <div class="container">
             
             <div v-if="!isEditing" class="addItem">
-                <input type="text" v-model="inputItem" v-on:keyup.enter="storeItem" placeholder="What will you do?">   
+                <input type="text" v-model="inputItem" v-on:keyup.enter="storeItem" placeholder="What will you do?">
+                <input type="submit" value="ADD >>" @click="storeItem">   
             </div>
 
             <div v-else class="addItem">

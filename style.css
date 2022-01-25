@@ -79,7 +79,8 @@ button {
 
 
 .addItem input[type=text]:focus {
-   outline-color: white
+   outline-color: white;
+   outline-width: 0;
    
 }
 
@@ -92,10 +93,11 @@ button {
     height: 4.5rem;
     background: white;
     border: none;
-    color: rgb(142, 19, 167);
+    color: rgb(205, 170, 209);
     font-size: 1.3rem;
     font-weight: 600;
     padding-right: 0.5rem;
+    margin: 0;
 }
 
 .checked {
