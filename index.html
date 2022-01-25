@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TO-DO LIST</title>
+</head>
+<body>
+    <div id="app">
+
+        <div class="container">
+            
+            <div v-if="!isEditing" class="addItem">
+                <input type="text" v-model="inputItem" v-on:keyup.enter="storeItem" placeholder="What will you do?">   
+            </div>
+
+            <div v-else class="addItem">
+                <input type="text" v-model="inputItem">
+                <input type="submit" value="UPDATE >>" @click="updateItem">
+            </div>
+
+            <ul>
+                <li v-for="(item, index) in lista" :key="index">
+                    
+                    <label :class="item.checked ? 'checked' : ''">
+                        <input type="checkbox" v-model="item.checked" @click="salvaCheckedItem">    
+                        {{item.label}}
+                    </label>
+
+                    <span>
+                        <button @click="editItem(index, item)" class="bot-editar">EDIT</button>
+                        <button @click="deleteItem(index)" class="bot-deletar">DEL</button>
+                    </span>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
+   
+</body>
+</html>
